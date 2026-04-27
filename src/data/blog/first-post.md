@@ -1,46 +1,21 @@
 ---
-author: songtov
+author: Chiho Song
 pubDatetime: 2026-04-27T00:00:00Z
-title: 첫 글 — Claude로 블로그 글 쓰는 법
-slug: first-post
+title: Hello, world
+slug: hello-world
 featured: true
 draft: false
 tags:
   - meta
-description: AstroPaper 블로그를 셋업하고, Claude로 새 글을 일관된 형식으로 생성하는 방법을 정리합니다.
+description: 블로그를 시작합니다. AI Engineer로 일하며 정리한 생각과 코드를 남기려고요.
 ---
 
-이 블로그는 [AstroPaper](https://github.com/satnaing/astro-paper) 테마와 GitHub Pages로 운영됩니다. 새 글은 `src/data/blog/` 아래에 마크다운 파일을 추가하면 됩니다.
+이 블로그는 일하면서 마주친 문제, 그걸 풀면서 배운 것, 그리고 정리해두지 않으면 잊어버리는 작은 발견들을 적어두는 곳입니다.
 
-## Claude로 새 글 생성할 때 쓰는 프롬프트 형식
+요즘 관심 있는 것들:
 
-> 다음 frontmatter 규격에 맞춰 `src/data/blog/<slug>.md` 파일을 만들어줘. 본문은 마크다운으로, 코드 블록과 소제목을 자유롭게 사용해.
+- LLM 기반 시스템을 어떻게 안정적으로 운영할까
+- Python으로 도메인을 깔끔하게 모델링하는 법
+- 개발 흐름을 방해하지 않는 자동화
 
-필수 frontmatter:
-
-```yaml
----
-author: songtov
-pubDatetime: 2026-04-27T00:00:00Z   # ISO 8601, UTC
-title: 글 제목
-slug: url-slug                       # 파일명과 일치시키는 게 무난
-featured: false                      # 메인 상단 노출 여부
-draft: false
-tags:
-  - tag1
-  - tag2
-description: 한두 문장 요약 (OG/검색용)
----
-```
-
-선택 필드: `modDatetime`, `ogImage`, `canonicalURL`.
-
-## 로컬 미리보기
-
-```bash
-pnpm install
-pnpm dev          # http://localhost:4321
-pnpm build        # 정적 빌드 → dist/
-```
-
-`main` 브랜치로 push하면 GitHub Actions가 빌드해서 https://songtov.github.io 에 배포합니다.
+천천히, 짧게, 자주 쓰는 걸 목표로.

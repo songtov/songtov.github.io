@@ -1,9 +1,9 @@
 export const SITE = {
   website: "https://songtov.github.io/",
-  author: "songtov",
+  author: "Chiho Song",
   profile: "https://github.com/songtov",
-  desc: "Developer blog by songtov.",
-  title: "Dev Log",
+  desc: "AI Engineer Chiho Song의 개발 노트.",
+  title: "Songtov's Blog",
   ogImage: "astropaper-og.jpg",
   lightAndDarkMode: true,
   postPerIndex: 4,

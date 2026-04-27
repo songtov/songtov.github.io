@@ -26,3 +26,7 @@ pnpm-debug.log*
 # pagefind
 
 public/pagefind
+
+# local Claude context / personal notes
+CLAUDE.md
+TODO.md
