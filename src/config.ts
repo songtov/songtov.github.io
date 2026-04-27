@@ -1,0 +1,23 @@
+export const SITE = {
+  website: "https://songtov.github.io/",
+  author: "songtov",
+  profile: "https://github.com/songtov",
+  desc: "Developer blog by songtov.",
+  title: "Dev Log",
+  ogImage: "astropaper-og.jpg",
+  lightAndDarkMode: true,
+  postPerIndex: 4,
+  postPerPage: 4,
+  scheduledPostMargin: 15 * 60 * 1000,
+  showArchives: true,
+  showBackButton: true,
+  editPost: {
+    enabled: true,
+    text: "Edit page",
+    url: "https://github.com/songtov/songtov.github.io/edit/main/",
+  },
+  dynamicOgImage: true,
+  dir: "ltr",
+  lang: "en",
+  timezone: "Asia/Seoul",
+} as const;
