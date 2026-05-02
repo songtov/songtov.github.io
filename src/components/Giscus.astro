@@ -1,22 +1,36 @@
 ---
-// Giscus comments widget
+// Giscus comments widget — works with Astro View Transitions
 ---
 
 <div class="giscus mt-12"></div>
 
-<script
-  is:inline
-  src="https://giscus.app/client.js"
-  data-repo="songtov/songtov.github.io"
-  data-repo-id="R_kgDOSNpQdg"
-  data-category="Announcements"
-  data-category-id="DIC_kwDOSNpQds4C8KQ3"
-  data-mapping="pathname"
-  data-strict="0"
-  data-reactions-enabled="1"
-  data-emit-metadata="0"
-  data-input-position="bottom"
-  data-theme="preferred_color_scheme"
-  data-lang="ko"
-  crossorigin="anonymous"
-  async></script>
+<script is:inline>
+  function loadGiscus() {
+    const container = document.querySelector(".giscus");
+    if (!container) return;
+
+    // Clear any previous iframe (avoid duplicates on SPA navigation)
+    container.innerHTML = "";
+
+    const script = document.createElement("script");
+    script.src = "https://giscus.app/client.js";
+    script.async = true;
+    script.crossOrigin = "anonymous";
+    script.setAttribute("data-repo", "songtov/songtov.github.io");
+    script.setAttribute("data-repo-id", "R_kgDOSNpQdg");
+    script.setAttribute("data-category", "Announcements");
+    script.setAttribute("data-category-id", "DIC_kwDOSNpQds4C8KQ3");
+    script.setAttribute("data-mapping", "pathname");
+    script.setAttribute("data-strict", "0");
+    script.setAttribute("data-reactions-enabled", "1");
+    script.setAttribute("data-emit-metadata", "0");
+    script.setAttribute("data-input-position", "bottom");
+    script.setAttribute("data-theme", "preferred_color_scheme");
+    script.setAttribute("data-lang", "ko");
+
+    container.appendChild(script);
+  }
+
+  // Run on first full page load AND on every SPA navigation
+  document.addEventListener("astro:page-load", loadGiscus);
+</script>
