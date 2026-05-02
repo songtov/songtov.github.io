@@ -2,7 +2,7 @@ export const SITE = {
   website: "https://songtov.github.io/",
   author: "Chiho Song",
   profile: "https://github.com/songtov",
-  desc: "AI Engineer Chiho Song의 개발 노트.",
+  desc: "AI Engineer 송치호의 개발 노트. AI Agent, LLM, Ontology, 그리고 일하면서 배운 것들.",
   title: "Songtov's Blog",
   ogImage: "astropaper-og.jpg",
   lightAndDarkMode: true,
@@ -18,6 +18,6 @@ export const SITE = {
   },
   dynamicOgImage: true,
   dir: "ltr",
-  lang: "en",
+  lang: "ko",
   timezone: "Asia/Seoul",
 } as const;
