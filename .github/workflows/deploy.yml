@@ -39,6 +39,7 @@ jobs:
         run: pnpm run build
         env:
           PUBLIC_GOOGLE_SITE_VERIFICATION: ${{ secrets.PUBLIC_GOOGLE_SITE_VERIFICATION }}
+          PUBLIC_GOOGLE_ANALYTICS_ID: ${{ secrets.PUBLIC_GOOGLE_ANALYTICS_ID }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

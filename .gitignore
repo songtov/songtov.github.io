@@ -30,3 +30,6 @@ public/pagefind
 # local Claude context / personal notes
 CLAUDE.md
 TODO.md
+
+# Obsidian vault config
+.obsidian/

@@ -1,7 +1,10 @@
 ---
 import { Font } from "astro:assets";
 import { ClientRouter } from "astro:transitions";
-import { PUBLIC_GOOGLE_SITE_VERIFICATION } from "astro:env/client";
+import {
+  PUBLIC_GOOGLE_SITE_VERIFICATION,
+  PUBLIC_GOOGLE_ANALYTICS_ID,
+} from "astro:env/client";
 import { SITE } from "@/config";
 import "@/styles/global.css";
 
@@ -147,6 +150,31 @@ const structuredData = {
           name="google-site-verification"
           content={PUBLIC_GOOGLE_SITE_VERIFICATION}
         />
+      )
+    }
+
+    {
+      PUBLIC_GOOGLE_ANALYTICS_ID && (
+        <>
+          <script
+            is:inline
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=${PUBLIC_GOOGLE_ANALYTICS_ID}`}
+          />
+          <script is:inline define:vars={{ gaId: PUBLIC_GOOGLE_ANALYTICS_ID }}>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', gaId, { send_page_view: false });
+            document.addEventListener('astro:page-load', () => {
+              gtag('event', 'page_view', {
+                page_path: location.pathname + location.search,
+                page_location: location.href,
+                page_title: document.title,
+              });
+            });
+          </script>
+        </>
       )
     }
 
