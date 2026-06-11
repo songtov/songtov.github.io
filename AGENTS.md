@@ -67,6 +67,7 @@ If build verification fails because the sandbox blocks network access for Google
 
 ## Current Operating Preferences
 
-- Prefer `chihosong.com` as the primary custom domain if a custom domain is configured.
+- Do not assume `chihosong.com` will be connected to this blog.
+- Keep the current GitHub Pages domain unless the user explicitly chooses a different custom domain.
 - Consider Cloudflare Pages for PR previews and domain/DNS management if preview hosting is added later.
 - Avoid adding Google AdSense until the blog has a stronger content base and meaningful recurring traffic.
