@@ -53,14 +53,26 @@ const structuredData = {
     },
   ],
 };
+
+const googleAnalyticsScript = `
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    window.dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+  gtag("config", ${JSON.stringify(PUBLIC_GOOGLE_ANALYTICS_ID)}, { send_page_view: false });
+  document.addEventListener("astro:page-load", () => {
+    gtag("event", "page_view", {
+      page_path: location.pathname + location.search,
+      page_location: location.href,
+      page_title: document.title,
+    });
+  });
+`;
 ---
 
 <!doctype html>
-<html
-  dir={SITE.dir}
-  lang={lang}
-  class={`${scrollSmooth && "scroll-smooth"}`}
->
+<html dir={SITE.dir} lang={lang} class={`${scrollSmooth && "scroll-smooth"}`}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -161,19 +173,7 @@ const structuredData = {
             async
             src={`https://www.googletagmanager.com/gtag/js?id=${PUBLIC_GOOGLE_ANALYTICS_ID}`}
           />
-          <script is:inline define:vars={{ gaId: PUBLIC_GOOGLE_ANALYTICS_ID }}>
-            window.dataLayer = window.dataLayer || [];
-            function gtag() { dataLayer.push(arguments); }
-            gtag('js', new Date());
-            gtag('config', gaId, { send_page_view: false });
-            document.addEventListener('astro:page-load', () => {
-              gtag('event', 'page_view', {
-                page_path: location.pathname + location.search,
-                page_location: location.href,
-                page_title: document.title,
-              });
-            });
-          </script>
+          <script is:inline set:html={googleAnalyticsScript} />
         </>
       )
     }
