@@ -4,7 +4,7 @@ pubDatetime: 2026-06-12T00:00:00Z
 title: AI 코딩 에이전트는 코드보다 작업환경에서 더 자주 실패한다
 slug: agent-workflow-operating-rules
 featured: false
-draft: true
+draft: false
 tags:
   - ai-agent
   - workflow
