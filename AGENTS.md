@@ -7,11 +7,13 @@ This repository is Chiho Song's personal Astro blog.
 - Production branch: `main`
 - Blog content: `src/data/blog/`
 - Framework: Astro with the AstroPaper theme
-- Primary language for posts: Korean
+- Primary language for posts: English
 - Site focus: AI agents, LLM workflows, ontology, Python, and practical engineering notes
 
 ## Writing Guidelines
 
+- Write all new posts in English and set `lang: en` in frontmatter.
+- Write titles, descriptions, and body text in English, including posts about Korean-specific topics.
 - Keep posts personal, practical, and engineering-focused.
 - Prefer concrete observations from building, studying, or using tools over generic news summaries.
 - Use `draft: true` while drafting.

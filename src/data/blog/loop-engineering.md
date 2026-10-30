@@ -1,7 +1,7 @@
 ---
 author: Chiho Song
 pubDatetime: 2026-06-11T06:10:00Z
-title: 프롬프트 엔지니어링 다음은 루프 엔지니어링이다
+title: After Prompt Engineering Comes Loop Engineering
 slug: loop-engineering
 featured: false
 draft: false
@@ -11,126 +11,127 @@ tags:
   - llm
   - loop-engineering
   - ai-tools
-description: LLM을 한 번 잘 쓰는 기술보다, 입력과 출력과 피드백이 계속 개선되는 루프를 설계하는 능력이 더 중요해지고 있다는 생각.
+description: A thought that designing loops where inputs, outputs, and feedback keep improving matters more than the skill of using an LLM well once.
+lang: en
 ---
 
-프롬프트 엔지니어링은 LLM을 잘 쓰기 위한 첫 번째 언어였다.
+Prompt engineering was the first language for using LLMs well.
 
-무엇을 시킬지, 어떤 맥락을 줄지, 어떤 형식으로 답을 받을지. 이 질문들은 여전히 중요하다. 하지만 LLM을 매일 쓰다 보면 어느 순간 프롬프트 하나를 잘 쓰는 것보다 더 중요한 문제가 보인다.
+What to ask for, what context to give, what format to get the answer in. These questions still matter. But when you use LLMs every day, at some point you see a problem more important than writing a single good prompt.
 
-**이 작업이 다음 작업을 더 쉽게 만들고 있는가?**
+**Is this task making the next task easier?**
 
-나는 이걸 루프 엔지니어링이라고 부르고 싶다.
-
----
-
-## 프롬프트는 요청이고, 루프는 시스템이다
-
-프롬프트는 한 번의 요청이다.
-
-논문을 요약해줘. 코드를 리뷰해줘. 회의록을 정리해줘. 에러 원인을 찾아줘.
-
-반면 루프는 요청과 결과가 다시 환경을 바꾸는 구조다.
-
-논문을 요약하면 wiki에 들어간다. wiki에 들어간 내용은 다음 질문의 컨텍스트가 된다. 질문에서 부족한 부분이 발견되면 다시 wiki가 보강된다. 중요한 정의는 Anki 카드가 된다. Anki에서 틀린 카드는 다시 설명을 요구하고, 그 설명이 다시 노트로 들어간다.
-
-한 번의 답변이 끝이 아니라 다음 답변의 조건이 된다.
-
-이게 루프다.
+I'd like to call this loop engineering.
 
 ---
 
-## 좋은 루프의 조건
+## A Prompt Is a Request; a Loop Is a System
 
-내가 생각하는 좋은 LLM 루프에는 몇 가지 조건이 있다.
+A prompt is a single request.
 
-1. **상태가 남아야 한다**
+Summarize this paper. Review this code. Clean up these meeting notes. Find the cause of this error.
 
-   좋은 대화가 휘발되면 다시 처음부터 시작해야 한다. 결과물은 파일, 노트, 이슈, 테스트, 카드, 로그처럼 다음 세션에서 다시 읽을 수 있는 형태로 남아야 한다.
+A loop, on the other hand, is a structure where requests and results change the environment.
 
-2. **피드백이 들어갈 자리가 있어야 한다**
+When you summarize a paper, it goes into the wiki. What's in the wiki becomes context for the next question. When a question reveals a gap, the wiki gets reinforced. Important definitions become Anki cards. Cards you get wrong in Anki call for another explanation, and that explanation goes back into the notes.
 
-   사람이 수정한 내용, 실패한 테스트, 다시 물어본 질문, 헷갈린 암기 카드가 모두 루프의 입력이 되어야 한다. 피드백이 시스템 밖에 있으면 루프는 닫히지 않는다.
+One answer isn't the end; it becomes the condition for the next answer.
 
-3. **다음 행동이 자동으로 작아져야 한다**
-
-   좋은 루프는 다음 액션을 작게 만든다. 매번 "뭘 해야 하지?"에서 시작하지 않고, 이미 정리된 컨텍스트와 후보 액션이 있어야 한다.
-
-4. **품질 기준이 반복 가능해야 한다**
-
-   글이면 체크리스트, 코딩이면 테스트, 공부면 recall, 리서치면 citation이 필요하다. LLM의 출력은 그럴듯함이 아니라 반복 가능한 기준으로 다시 들어와야 한다.
+That's a loop.
 
 ---
 
-## 예시: 공부 루프
+## What Makes a Good Loop
 
-공부에서 루프는 이렇게 생길 수 있다.
+I think a good LLM loop has a few conditions.
 
-1. 자료를 `raw/`에 넣는다.
-2. LLM이 핵심 개념을 markdown 노트로 정리한다.
-3. 노트에서 정의, 비교, 연표, 수식을 Anki 카드 후보로 뽑는다.
-4. 사람이 Anki를 돌다가 틀린다.
-5. 틀린 카드를 LLM에게 다시 설명하게 한다.
-6. 설명이 노트에 반영된다.
-7. 더 좋은 카드가 다시 생성된다.
+1. **State has to persist**
 
-이 루프에서 중요한 건 LLM이 똑똑한 답을 한 번 주는 것이 아니다.
+   If a good conversation evaporates, you have to start over from scratch. Outputs should remain in a form the next session can read again: files, notes, issues, tests, cards, logs.
 
-중요한 건 **헷갈림이 시스템을 개선하는 입력이 된다**는 점이다.
+2. **There has to be a place for feedback**
 
----
+   Human edits, failed tests, repeated questions, and confusing flashcards should all become inputs to the loop. If feedback lives outside the system, the loop never closes.
 
-## 예시: 개발 루프
+3. **The next action should automatically get smaller**
 
-개발도 비슷하다.
+   A good loop makes the next action small. Instead of starting from "What should I do?" every time, you should already have organized context and candidate actions.
 
-1. 요구사항을 이슈나 문서로 쓴다.
-2. LLM이 구현 계획을 만든다.
-3. 코드를 수정한다.
-4. 테스트와 린트가 실패한다.
-5. 실패 로그가 다시 LLM의 입력이 된다.
-6. 수정 후 변경 이유가 문서나 PR 설명에 남는다.
-7. 다음 작업자는 그 기록을 읽고 더 빨리 들어온다.
+4. **Quality criteria have to be repeatable**
 
-여기서 테스트 실패는 방해물이 아니라 루프의 센서다. 코드 리뷰도 마찬가지다. 사람의 피드백은 LLM을 혼내는 말이 아니라 시스템이 더 정확해지는 신호다.
+   Writing needs a checklist, coding needs tests, studying needs recall, research needs citations. LLM output should come back in through repeatable criteria, not plausibility.
 
 ---
 
-## Agent는 루프 위에서 강해진다
+## Example: A Study Loop
 
-AI Agent를 도입할 때 자주 하는 실수는 "에이전트가 어디까지 혼자 할 수 있는가"만 보는 것이다.
+In studying, a loop can look like this.
 
-하지만 실무에서는 조금 다르게 봐야 한다.
+1. Put material into `raw/`.
+2. The LLM organizes the key concepts into markdown notes.
+3. Pull definitions, comparisons, timelines, and formulas from the notes as Anki card candidates.
+4. The human reviews Anki and gets cards wrong.
+5. Have the LLM explain the missed cards again.
+6. The explanation is reflected in the notes.
+7. Better cards are generated again.
 
-**이 에이전트가 실패했을 때, 그 실패가 다음 실행을 더 좋게 만드는가?**
+What matters in this loop isn't the LLM giving one smart answer.
 
-실패 로그가 남는가. 사람이 고친 부분을 학습 가능한 형태로 저장하는가. 반복 작업이 skill로 승격되는가. 컨텍스트가 정리되는가. 다음 실행에서 같은 설명을 반복하지 않아도 되는가.
-
-에이전트의 지능은 모델 안에만 있지 않다. 루프 안에도 있다.
-
----
-
-## 루프 엔지니어링의 감각
-
-루프 엔지니어링은 거창한 프레임워크가 아니다. 오히려 아주 실무적인 감각에 가깝다.
-
-- 결과물을 어디에 남길 것인가
-- 다음 실행에서 무엇을 먼저 읽게 할 것인가
-- 사람의 피드백은 어떤 형식으로 들어갈 것인가
-- 실패는 어떻게 기록할 것인가
-- 반복되는 요청은 언제 skill이나 script로 뽑을 것인가
-- 어떤 기준으로 출력 품질을 검사할 것인가
-
-이 질문들에 답하다 보면 LLM은 단순한 채팅창이 아니라 작업 환경의 일부가 된다.
+What matters is that **confusion becomes an input that improves the system.**
 
 ---
 
-## 결론
+## Example: A Development Loop
 
-프롬프트 엔지니어링은 LLM에게 말을 거는 기술이다.
+Development is similar.
 
-루프 엔지니어링은 LLM이 들어간 환경을 설계하는 기술이다.
+1. Write requirements as an issue or document.
+2. The LLM creates an implementation plan.
+3. Change the code.
+4. Tests and lint fail.
+5. The failure logs become input to the LLM again.
+6. After the fix, the reason for the change stays in a document or PR description.
+7. The next person reads that record and gets up to speed faster.
 
-앞으로 더 중요해지는 건 "어떤 프롬프트가 제일 좋은가"보다 "어떤 루프가 시간이 지날수록 더 나아지는가"일 것이다. 강한 모델은 계속 나온다. 하지만 강한 모델을 매번 처음부터 쓰는 사람과, 모델의 출력이 자기 환경을 계속 개선하게 만드는 사람 사이에는 점점 큰 차이가 생길 것이다.
+Here, a failing test isn't an obstacle; it's the loop's sensor. Code review is the same. Human feedback isn't scolding the LLM; it's a signal that makes the system more accurate.
 
-나는 후자가 더 흥미롭다.
+---
+
+## Agents Get Stronger on Top of Loops
+
+A common mistake when adopting AI agents is to look only at "how far can the agent go on its own."
+
+In practice, you have to look at it a bit differently.
+
+**When this agent fails, does that failure make the next run better?**
+
+Are failure logs kept? Are human corrections stored in a learnable form? Are repeated tasks promoted to skills? Is context organized? Can the next run go without repeating the same explanation?
+
+An agent's intelligence isn't only inside the model. It's also inside the loop.
+
+---
+
+## The Sense of Loop Engineering
+
+Loop engineering isn't a grand framework. It's closer to a very practical sense.
+
+- Where will outputs be kept?
+- What should the next run read first?
+- In what format will human feedback come in?
+- How will failures be recorded?
+- When should repeated requests be extracted into a skill or script?
+- By what criteria will output quality be checked?
+
+As you answer these questions, the LLM stops being just a chat window and becomes part of your work environment.
+
+---
+
+## Conclusion
+
+Prompt engineering is the skill of talking to an LLM.
+
+Loop engineering is the skill of designing an environment that has an LLM in it.
+
+What will matter more going forward is not "which prompt is best" but "which loop gets better over time." Strong models will keep coming. But there will be a growing gap between people who use strong models from scratch every time and people who make model output keep improving their own environment.
+
+I find the latter more interesting.
