@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 360" font-family="system-ui, -apple-system, Segoe UI, sans-serif">
+  <title>The decision ladder: prompting, few-shot, RAG, fine-tuning</title>
+  <rect width="720" height="360" rx="16" fill="#f8fafc"/>
+  <text x="32" y="44" font-size="20" font-weight="700" fill="#0f172a">Climb only when the step below stops working</text>
+  <g font-size="16">
+    <rect x="32" y="270" width="300" height="56" rx="10" fill="#dbeafe" stroke="#3b82f6"/>
+    <text x="52" y="304" font-weight="600" fill="#1e3a8a">1. Prompt engineering</text>
+    <text x="360" y="304" fill="#334155">minutes · free to change</text>
+
+    <rect x="92" y="202" width="300" height="56" rx="10" fill="#e0e7ff" stroke="#6366f1"/>
+    <text x="112" y="236" font-weight="600" fill="#312e81">2. Few-shot examples</text>
+    <text x="420" y="236" fill="#334155">hours · shows the format</text>
+
+    <rect x="152" y="134" width="300" height="56" rx="10" fill="#ede9fe" stroke="#8b5cf6"/>
+    <text x="172" y="168" font-weight="600" fill="#4c1d95">3. RAG</text>
+    <text x="480" y="168" fill="#334155">days · adds fresh facts</text>
+
+    <rect x="212" y="66" width="300" height="56" rx="10" fill="#fce7f3" stroke="#ec4899"/>
+    <text x="232" y="100" font-weight="600" fill="#831843">4. Fine-tuning</text>
+    <text x="540" y="100" fill="#334155">weeks · changes behavior</text>
+  </g>
+</svg>
