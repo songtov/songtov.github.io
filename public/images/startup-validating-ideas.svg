@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 400" font-family="system-ui, -apple-system, Segoe UI, sans-serif">
+  <title>Signal ladder: likes, email signup, reply or call, pre-order or payment, from weak to strong</title>
+  <rect width="720" height="400" rx="16" fill="#f8fafc"/>
+  <text x="32" y="44" font-size="20" font-weight="700" fill="#0f172a">Not all "yes" signals are equal</text>
+  <text x="32" y="70" font-size="15" fill="#475569">The more a signal costs the person giving it, the more it tells you.</text>
+  <g font-size="16" font-weight="600">
+    <rect x="32" y="300" width="200" height="56" rx="8" fill="#e2e8f0"/>
+    <text x="132" y="333" fill="#334155" text-anchor="middle">"Sounds cool" / likes</text>
+    <rect x="192" y="232" width="200" height="56" rx="8" fill="#c7d2fe"/>
+    <text x="292" y="265" fill="#312e81" text-anchor="middle">Email signup</text>
+    <rect x="352" y="164" width="200" height="56" rx="8" fill="#818cf8"/>
+    <text x="452" y="197" fill="#ffffff" text-anchor="middle">Reply or call</text>
+    <rect x="488" y="96" width="200" height="56" rx="8" fill="#4338ca"/>
+    <text x="588" y="129" fill="#ffffff" text-anchor="middle">Pre-order / payment</text>
+  </g>
+  <g font-size="14" fill="#475569">
+    <text x="32" y="380">weak: free to give</text>
+    <text x="688" y="380" text-anchor="end">strong: costs money or time</text>
+  </g>
+</svg>
