@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 360" font-family="system-ui, -apple-system, Segoe UI, sans-serif">
+  <title>Where build time goes: from scratch, plumbing takes most of it; with a starter, most time goes to the core feature</title>
+  <rect width="720" height="360" rx="16" fill="#f8fafc"/>
+  <text x="32" y="44" font-size="20" font-weight="700" fill="#0f172a">Where the build time goes</text>
+  <text x="32" y="70" font-size="15" fill="#475569">Same idea, same founder. Bar width = time spent.</text>
+  <text x="32" y="112" font-size="16" font-weight="600" fill="#334155">From scratch</text>
+  <g font-size="14" text-anchor="middle">
+    <rect x="32" y="124" width="140" height="52" rx="6" fill="#cbd5e1"/>
+    <text x="102" y="155" fill="#334155">Login</text>
+    <rect x="176" y="124" width="140" height="52" rx="6" fill="#cbd5e1"/>
+    <text x="246" y="155" fill="#334155">Payments</text>
+    <rect x="320" y="124" width="110" height="52" rx="6" fill="#cbd5e1"/>
+    <text x="375" y="155" fill="#334155">Emails</text>
+    <rect x="434" y="124" width="130" height="52" rx="6" fill="#cbd5e1"/>
+    <text x="499" y="155" fill="#334155">Landing + SEO</text>
+    <rect x="568" y="124" width="120" height="52" rx="6" fill="#6366f1"/>
+    <text x="628" y="155" fill="#ffffff">Core feature</text>
+  </g>
+  <text x="32" y="222" font-size="16" font-weight="600" fill="#334155">With a reusable starter</text>
+  <g font-size="14" text-anchor="middle">
+    <rect x="32" y="234" width="120" height="52" rx="6" fill="#cbd5e1"/>
+    <text x="92" y="265" fill="#334155">Plumbing</text>
+    <rect x="156" y="234" width="290" height="52" rx="6" fill="#6366f1"/>
+    <text x="301" y="265" fill="#ffffff">Core feature</text>
+  </g>
+  <text x="460" y="265" font-size="15" fill="#475569">→ ship weeks earlier</text>
+  <g font-size="14">
+    <rect x="32" y="312" width="16" height="16" rx="3" fill="#cbd5e1"/>
+    <text x="54" y="325" fill="#334155">same in every SaaS</text>
+    <rect x="210" y="312" width="16" height="16" rx="3" fill="#6366f1"/>
+    <text x="232" y="325" fill="#334155">what users pay for</text>
+  </g>
+</svg>
