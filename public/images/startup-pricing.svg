@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 380" font-family="system-ui, -apple-system, Segoe UI, sans-serif">
+  <title>One-time pricing versus subscription pricing: what fits each and the trade-off</title>
+  <rect width="720" height="380" rx="16" fill="#f8fafc"/>
+  <text x="32" y="44" font-size="20" font-weight="700" fill="#0f172a">Match the price model to how it's used</text>
+  <rect x="32" y="68" width="316" height="280" rx="12" fill="#e0e7ff" stroke="#6366f1" stroke-width="2"/>
+  <rect x="372" y="68" width="316" height="280" rx="12" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <g font-size="18" font-weight="700">
+    <text x="56" y="104" fill="#312e81">Pay once</text>
+    <text x="396" y="104" fill="#14532d">Subscription</text>
+  </g>
+  <g font-size="15" fill="#334155">
+    <text x="56" y="136">The buyer owns a thing</text>
+    <text x="56" y="182" font-weight="600">Fits:</text>
+    <text x="56" y="206">boilerplates, templates,</text>
+    <text x="56" y="228">courses, ebooks</text>
+    <text x="56" y="274" font-weight="600">Trade-off:</text>
+    <text x="56" y="298">cash up front, but every</text>
+    <text x="56" y="320">month starts at zero</text>
+    <text x="396" y="136">The buyer keeps getting value</text>
+    <text x="396" y="182" font-weight="600">Fits:</text>
+    <text x="396" y="206">analytics, monitoring,</text>
+    <text x="396" y="228">hosting, ongoing automation</text>
+    <text x="396" y="274" font-weight="600">Trade-off:</text>
+    <text x="396" y="298">slower start, but revenue</text>
+    <text x="396" y="320">compounds month to month</text>
+  </g>
+</svg>
